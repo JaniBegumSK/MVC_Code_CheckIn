@@ -1,0 +1,38 @@
+﻿@model Pandu.Models.Usertable
+
+
+@using(Html.BeginForm("Login","Home",FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    if(ViewBag.message!=null)
+    {
+        <div style="border:5px solid red">
+
+            @ViewBag.message
+            ]
+        </div>
+    }
+<table>
+    <tr>
+        <td>@Html.LabelFor(a => a.Username)</td>
+        <td>@Html.TextBoxFor(a => a.Username)</td>
+        <td>@Html.ValidationMessageFor(a => a.Username)</td>
+    </tr>
+   
+    <tr>
+        <td>@Html.LabelFor(a => a.Password)</td>
+        <td>@Html.TextBoxFor(a => a.Password) </td>
+        <td>@Html.ValidationMessageFor(a => a.Password)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="submit" value="Login"></td>
+    </tr>
+
+</table>
+}
+@section scripts  {
+    @Scripts.Render("~/bundles/jqueryval")
+    }
+

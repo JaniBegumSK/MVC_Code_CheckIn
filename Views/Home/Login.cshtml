@@ -1,5 +1,7 @@
 ﻿@model Pandu.Models.Usertable
 
+    <h1> Welcome To Login Page</h1>
+
 
 @using(Html.BeginForm("Login","Home",FormMethod.Post))
 {
@@ -10,27 +12,45 @@
         <div style="border:5px solid red">
 
             @ViewBag.message
-            ]
+            
         </div>
     }
-<table>
-    <tr>
-        <td>@Html.LabelFor(a => a.Username)</td>
-        <td>@Html.TextBoxFor(a => a.Username)</td>
-        <td>@Html.ValidationMessageFor(a => a.Username)</td>
-    </tr>
-   
-    <tr>
-        <td>@Html.LabelFor(a => a.Password)</td>
-        <td>@Html.TextBoxFor(a => a.Password) </td>
-        <td>@Html.ValidationMessageFor(a => a.Password)</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td><input type="submit" value="Login"></td>
-    </tr>
+  <html>
+<head></head>
+    <body>
+        <table>
 
-</table>
+            <tr>
+
+                <td>@Html.LabelFor(a => a.Username)</td>
+                
+                <td>@Html.TextBoxFor(a => a.Username)</td>
+
+                <td>@Html.ValidationMessageFor(a => a.Username)</td>
+            </tr>
+           
+           
+            <tr>
+                <td>@Html.LabelFor(a => a.Password)</td>
+
+                <td>@Html.TextBoxFor(a => a.Password) </td>
+
+                <td>@Html.ValidationMessageFor(a => a.Password)</td>
+            </tr>
+
+            <tr>
+
+                <td>   </td>
+
+                <td><input type="submit" value="Login">
+                <br/>
+        
+            </tr>
+
+        </table>
+        </body>
+
+</html>
 }
 @section scripts  {
     @Scripts.Render("~/bundles/jqueryval")

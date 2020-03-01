@@ -1,9 +1,13 @@
 ﻿
+
+
+<h1>AfterLogin</h1>
+
 @if (Session["LogedUsername"] != null)
 {
-    <text>
-
-   Welcome  @Session["LogedUsername"].ToString()
-
-</text>
+    <h2>Welcome to @Session["LogedUsername"].ToString();</h2>
 }
+
+@Html.ActionLink("Logout", "Login")
+@Html.ActionLink( "create","create")
+ 
